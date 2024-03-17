@@ -11,12 +11,12 @@ dependencies:
   common_cells: { git: "https://github.com/pulp-platform/common_cells.git", version: 1.21.0 }
   axi: { git: "https://github.com/pulp-platform/axi.git", version: 0.29.1 } 
   tech_cells_generic: { git: "https://github.com/pulp-platform/tech_cells_generic.git", version: 0.2.7 }
-  riscv-dbg: { git: "git@github.com:Alsaqr-platform/riscv-dbg.git", version: 0.4.1 }
+  riscv-dbg: { git: "git@github.com:Arshaan-256/riscv-dbg.git", version: 0.0.3 }
 
 
 sources:
-  - defines:
-      WT_DCACHE: ~
+  #- defines:
+      # WT_DCACHE: ~
     files:
     # Packages
     - target: not(cv32a6)
@@ -64,6 +64,9 @@ sources:
     - core/mult.sv
 #    - core/mmu_sv32/cva6_mmu_sv32.sv
 #    - core/mmu_sv32/cva6_ptw_sv32.sv
+    # STD_CacheSubsystem
+    - core/cache_subsystem/std_nbdcache.sv
+    - core/cache_subsystem/miss_handler.sv
     - core/load_unit.sv
     - core/issue_read_operands.sv
     - core/pmp/src/pmp_entry.sv
